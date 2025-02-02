@@ -14,4 +14,4 @@ Three different heuristics functions are implented:
     Calculate the Manhattan distance and adds "2" times the number of numbers that are in the spots of other numbers (i.e. adds 2 to the cost is number "1" is in the spot of number "3" and vice versa).
 
 # To Run
-To run the program use either 'python3 main.py' to run a test of 50 different m-value and seed combinations as well as display graphs of average time or use 'python3 test.py' to run a test of the algorithms, testing if they return the optimal path or not.
+To run the program use either `python3 main.py` to run a test of 50 different m-value and seed combinations as well as display graphs of average time or use `python3 test.py` to run a test of the algorithms, testing if they return the optimal path or not.
