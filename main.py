@@ -11,7 +11,7 @@ def main():
         for seed in range(0,10):
             # Sets the seed of the problem so all students solve the same problems
             board = Board(40, 8)
-            print(a_star_search(board, CB))
+            print(a_star_search(board, NA))
             return
         #     start =  time.process_time()   
         #     '''
