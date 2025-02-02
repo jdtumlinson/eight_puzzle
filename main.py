@@ -48,8 +48,9 @@ def main():
     for results, title in zip([bf_avgs, mt_avgs, cb_avgs, na_avgs], ["BF Average Times", "MT Average Times", "CB Average Times", "NA Average Times"]):
         plt.plot([10,20,30,40,50], results)
         plt.title(title)
-        plt.xlabel("Seed")
-        plt.ylabel("Time")
+        plt.xlabel("m-value")
+        plt.ylabel("Average Time (seconds)")
+        plt.xticks([10,20,30,40,50])
         plt.show()
 
 if __name__ == "__main__":
