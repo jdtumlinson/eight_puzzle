@@ -38,16 +38,23 @@ A* Search
 def a_star_search(board: Board, heuristic: Callable[[Board], int]):
     queue = [[board, [], 0]]                                                                #Initialize a queue containing the current board, an empty list of steps and current cost
     seen = {}                                                                               #Create a dictionary to store boards we've already seen
+    itr = 0                                                                                 #Number of iterations the while loop has ran through
+    LIMIT = 10000000                                                                        #The allowed limit of iterations
+    numSearchNodes = 0
     
     while(True):                                                                            #All boards are solvable, so repeat until solved
+        itr += 1                                                                            #Add one to the iteration count and return blank if it's past the allowed range
+        if itr >= LIMIT: return [[], 0]
+        
         curState = queue.pop(0)                                                             #Pop the head of the queue
 
-        if curState[0].goal_test(): return curState[1]                                      #If the head is solved, return the solved path
+        if curState[0].goal_test(): return [curState[1], numSearchNodes]                    #If the head is solved, return the solved path
 
         for move in curState[0].next_action_states():                                       #Iterate through the list of all possible moves
             if move[0].__str__() not in seen: seen[move[0].__str__()] = True                #If the board has not been seen, add it to the dictionary
             else: continue
-
+            numSearchNodes += 1
+            
             gh = curState[2] + heuristic(curState[0])                                       #Calculate the cost by using the current cost and a heuristic function
             
             if len(queue) == 0: queue.append([move[0], curState[1] + [move[1]], gh])        #Empty queue
