@@ -9,10 +9,10 @@ def BF(board: Board):
 
 def test(board: Board, heuristic: Callable[[Board], int]) -> tuple[list[str], float]:
     start = time.process_time()
-    result = a_star_search(board, heuristic)
+    result, nodes = a_star_search(board, heuristic)
     end =  time.process_time()
     
-    return result, end - start
+    return result, nodes, end - start
 
 def main():
     bf_avgs, mt_avgs, cb_avgs, na_avgs, i = [], [], [], [], 0
@@ -27,13 +27,13 @@ def main():
             ***********************************************
             '''
 
-            result, time = test(board, BF)
+            result, nodes, time = test(board, BF)
             bf_results.append(time)
-            result, time = test(board, MT)
+            result, nodes, time = test(board, MT)
             mt_results.append(time)
-            result, time = test(board, CB)
+            result, nodes, time = test(board, CB)
             cb_results.append(time)
-            result, time = test(board, NA)
+            result, nodes, time = test(board, NA)
             na_results.append(time)
             
             i += 1

@@ -17,7 +17,7 @@ def test(heuristic):
 
         board = Board(m,s)
 
-        solution = a_star_search(board, heuristic)
+        solution, _ = a_star_search(board, heuristic)
         correct = board.check_solution(solution)
 
         if correct:
