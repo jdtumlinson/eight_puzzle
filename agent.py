@@ -39,7 +39,7 @@ def a_star_search(board: Board, heuristic: Callable[[Board], int]):
     queue = [[board, [], 0]]                                                                #Initialize a queue containing the current board, an empty list of steps and current cost
     seen = {}                                                                               #Create a dictionary to store boards we've already seen
     itr = 0                                                                                 #Number of iterations the while loop has ran through
-    LIMIT = 10000000                                                                        #The allowed limit of iterations
+    LIMIT = 180000                                                                       #The allowed limit of iterations
     numSearchNodes = 0
     
     while(True):                                                                            #All boards are solvable, so repeat until solved
