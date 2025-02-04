@@ -16,7 +16,7 @@ Three different heuristics functions are implented:
 # To Run
 To run the program use either `python3 main.py` to run a test of 50 different m-value and seed combinations as well as display graphs of average time or use `python3 test.py` to run a test of the algorithms, testing if they return the optimal path or not.
 
-You can also run `python3 plotsRand.py` to run a test with five random m-value and seed pairs. This will also save four graphs in the `plots/randomPlots/` folder. Running `python3 plotsStatic.py` will do the same, but with five static m-value and seed pairs.
+You can also run `python3 plotsRand.py` to run a test with five random m-value and seed pairs. This will also save four graphs in the `plots/randomPlots/` folder. Running `python3 plotsStatic.py` will create one graph with all values combined. This can be hard to read, so there is an extra graph in `plots/` made in an external program.
 
 # Commented Code
 Please view `plotsStatic.py` for a commented version of both `plotsStatic.py` and `plotsRand.py`.
